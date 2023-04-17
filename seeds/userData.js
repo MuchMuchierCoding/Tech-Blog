@@ -6,5 +6,5 @@ const userData =
     "password": "tester123"
 }]
 
-const seedUser = () => User.builkCreate(userData);
+const seedUser = () => User.bulkCreate(userData);
 module.exports = seedUser
