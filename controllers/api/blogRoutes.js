@@ -28,5 +28,22 @@ router.delete('/:id', withAuth, async (req, res) => {
             return;
         }
         res.status(200).json(blogData);
-    } catch (err)
-})
+    } catch (err) {
+    res.status(500).json(err);
+}
+});
+
+router.post('/comment', withAuth, async (req, res) => {
+    try {
+        const newComment = await Comment.create({
+            ...req.body,
+            user_id: req.sessions.user_id   
+        });
+        res.status(200).json(newComment);
+    } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
+});
+
+module.exports = router;
