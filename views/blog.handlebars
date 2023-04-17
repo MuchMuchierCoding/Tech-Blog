@@ -1,0 +1,26 @@
+<div class="">
+    <div class="">
+        <div class="">
+            <div class="">
+                <h2 class="">{{title}}</h2>
+                <p>{{content}}</p>
+                <p>Created by {{user.name}} on {{format_date date_created}}</p>
+            </div>
+            <div class="">
+                <h2 class="">All Comments:</h2>
+                {{#each comments}}
+                <p>{{comment_text}} | {{format_date date_created}}</p>
+                {{each}}
+            </div>
+            <div class="">
+                <div="">
+                    <label for="blog-comment">Comment Below:</label><br>
+                    <textarea class="" name="blog-content"></textarea><br>
+                    <button class="">Post Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/comment.js"></script>
